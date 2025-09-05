@@ -1,4 +1,4 @@
-def drop(null_data:pd.Series, percentage:float)->list[bool]:
+def drop(null_data:pd.Series, percentage:float,names)->list[str]:
     """
     Args:
         null_data : series of percentages of null values in the data
@@ -6,4 +6,4 @@ def drop(null_data:pd.Series, percentage:float)->list[bool]:
     output:   
         list of boolean -> tells you if this feature is with us or not (true = out)
     """
-    return [null_data[i] for i in range(null_data) if >null_data[i]>percentage]
+    return [names[i] for i in range(len(null_data)) if null_data[i]>percentage]
